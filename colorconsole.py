@@ -19,19 +19,19 @@ def error(*text: Iterable[str], brackets: Optional[bool]=True, end: Optional[str
 def warning(*text: Iterable[str], brackets: Optional[bool]=True, end: Optional[str]="\n") -> None:
     """Print the 'text' in yellow and if 'brackets' is True, print '[WARNING]' before the 'text'."""
     before = ''
-    if brackets: before = colored('[ERROR] ', 'red', attrs=['bold'])
+    if brackets: before = colored('[WARNING] ', 'yellow', attrs=['bold'])
     print(before + colored(" ".join(text), 'yellow'), end=end)
 
 def info(*text: Iterable[str], brackets: Optional[bool]=True, end: Optional[str]="\n") -> None:
     """Print the 'text' in blue and if 'brackets' is True, print '[INFO]' before the 'text'."""
     before = ''
-    if brackets: before = colored('[ERROR] ', 'red', attrs=['bold'])
+    if brackets: before = colored('[INFO] ', 'blue', attrs=['bold'])
     print(before + colored(" ".join(text), 'blue'), end=end)
 
 def success(*text: Iterable[str], brackets: Optional[bool]=True, end: Optional[str]="\n") -> None:
     """Print the 'text' in green and if 'brackets' is True, print '[SUCCESS]' before the 'text'."""
     before = ''
-    if brackets: before = colored('[ERROR] ', 'red', attrs=['bold'])
+    if brackets: before = colored('[SUCCESS] ', 'green', attrs=['bold'])
     print(before + colored(" ".join(text), 'green'), end=end)
 
 def cprint(*text: Iterable[str], color: Optional[Colors]='white', highlight: Optional[Highlights]=None, attributes: Optional[Iterable[Attributes]]=None, end: Optional[str]="\n") -> None:
@@ -67,6 +67,6 @@ if __name__ == '__main__':
     warning("This is a warning...")
     info("This is an info...")
     success("This is a success...")
-    msg = "coucou"
+    msg = "Hello World"
     cprint("message:", msg + ".", color="magenta", attributes=["bold"])
     print(colorize(f"message: {msg}.", "magenta", None, ["bold"]))
