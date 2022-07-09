@@ -61,3 +61,12 @@ def colorize(text: str, color: Colors, highlight: Optional[Highlights]=None, att
         bold, dark, underline, blink, reverse, concealed.
     """
     return colored(text, color, highlight, attributes)
+
+if __name__ == '__main__':
+    error("This is an error...")
+    warning("This is a warning...")
+    info("This is an info...")
+    success("This is a success...")
+    msg = "coucou"
+    cprint("message:", msg + ".", color="magenta", attributes=["bold"])
+    print(colorize(f"message: {msg}.", "magenta", None, ["bold"]))
